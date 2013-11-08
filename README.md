@@ -1,8 +1,8 @@
 # Jumblr.
 
-[![Build Status](https://secure.travis-ci.org/tumblr/jumblr.png?branch=master)](http://travis-ci.org/tumblr/jumblr)
+[![Build Status](https://secure.travis-ci.org/orac/jumblr.png?branch=master)](http://travis-ci.org/orac/jumblr)
 
-A pleasant and complete Java wrapper for the Tumblr V2 API.
+A pleasant and complete Java wrapper for the Tumblr V2 API. This is a fork created to fix problems with the [original code](https://github.com/tumblr/jumblr). Unless you need these bugfixes today, you should use their library (which is in Maven and has releases) and wait for them to fix their bugs.
 
 ## Example
 
@@ -177,41 +177,6 @@ catch (JumblrException ex) {
 	System.out.println("(" + ex.getResponseCode().toString() + ") " + ex.getMessage());
 }
 ```
-
-## Maven
-
-``` xml
-<dependency>
-  <groupId>com.tumblr</groupId>
-  <artifactId>jumblr</artifactId>
-  <version>0.0.6</version>
-</dependency>
-```
-
-## Runnings Tests
-
-`mvn test`
-
-## More detail?
-
-Pop out that JavaDoc - full documentation awaits.
-
-Or you can use our hosted copy at:
-http://tumblr.github.io/jumblr/javadoc/
-
-Also see the documentation for the
-[Tumblr API](http://www.tumblr.com/docs/en/api/v2) itself.
-
-## Builds
-
-We supply some JAR builds you can use if you're not a fan of mvn.
-You can grab them with (or without) dependencies from
-[the project page](http://tumblr.github.io/jumblr).
-
-## Reporting issues
-
-Please refer to the GitHub issue tracker at:
-https://github.com/tumblr/jumblr/issues
 
 ## Copyright and license
 
