@@ -102,7 +102,7 @@ public class RequestBuilder {
         this.token = new Token(token, tokenSecret);
     }
 
-    private ResponseWrapper clear(Response response) {
+    /* package-visible for testing */ ResponseWrapper clear(Response response) {
         if (response.getCode() == 200 || response.getCode() == 201) {
             String json = response.getBody();
             try {
@@ -110,6 +110,9 @@ public class RequestBuilder {
                         registerTypeAdapter(JsonElement.class, new JsonElementDeserializer()).
                         create();
                 ResponseWrapper wrapper = gson.fromJson(json, ResponseWrapper.class);
+                if (wrapper == null) {
+                    throw new JumblrException(response);
+                }
                 wrapper.setClient(client);
                 return wrapper;
             } catch (JsonSyntaxException ex) {
